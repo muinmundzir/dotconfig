@@ -95,6 +95,7 @@ return require("packer").startup(function(use)
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
+	-- use("MunifTanjim/prettier.nvim")
 
 	-- treesitter
 	use({
@@ -104,6 +105,9 @@ return require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
+
+	-- colorizer
+	use("NvChad/nvim-colorizer.lua")
 
 	-- auto closing
 	use("windwp/nvim-autopairs")
