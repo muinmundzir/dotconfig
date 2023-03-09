@@ -51,6 +51,10 @@ return require("packer").startup(function(use)
 	-- status line
 	use("nvim-lualine/lualine.nvim")
 
+	-- vim ls
+	-- use("prabirshrestha/vim-lsp")
+	-- use("mattn/vim-lsp-settings")
+
 	-- fuzzy finding & lazygit
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use({
