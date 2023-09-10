@@ -8,7 +8,6 @@ local ensure_packer = function()
 	end
 	return false
 end
-
 local packer_bootstrap = ensure_packer()
 
 vim.cmd([[
@@ -29,11 +28,16 @@ return require("packer").startup(function(use)
 	-- file explorer
 	use("nvim-tree/nvim-tree.lua")
 
+	-- notify
+	use("rcarriga/nvim-notify")
+
 	-- colorscheme
 	use("folke/tokyonight.nvim")
+	use("rebelot/kanagawa.nvim")
 	use("bluz71/vim-nightfly-guicolors")
 	use("gustavo-hms/garbo")
-	use("overcache/NeoSolarized")
+	use("Tsuzat/NeoSolarized.nvim")
+	-- use("overcache/NeoSolarized")
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 	use("szw/vim-maximizer") -- maximizes and restore current window
@@ -47,6 +51,9 @@ return require("packer").startup(function(use)
 
 	-- icons
 	use("kyazdani42/nvim-web-devicons")
+
+	-- bufferline
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 
 	-- status line
 	use("nvim-lualine/lualine.nvim")
@@ -92,7 +99,14 @@ return require("packer").startup(function(use)
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-nvim-lsp")
-	use({ "glepnir/lspsaga.nvim", branch = "main" })
+	use({
+		"nvimdev/lspsaga.nvim",
+		after = "nvim-lspconfig",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+	})
+	-- use({ "glepnir/lspsaga.nvim", branch = "main" })
 	use("jose-elias-alvarez/typescript.nvim")
 	use("onsails/lspkind.nvim")
 
@@ -100,6 +114,8 @@ return require("packer").startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
 
+	-- lightbulb
+	use({ "kosayoda/nvim-lightbulb" })
 	-- treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",

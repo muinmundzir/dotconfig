@@ -1,6 +1,11 @@
 local opt = vim.opt -- for conciseness
 local api = vim.api
 
+-- notify
+vim.notify = require("notify").setup({
+	background_colour = "#fff",
+})
+
 -- transparent background
 api.nvim_set_hl(0, "Normal", { bg = "none" })
 api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -10,6 +15,9 @@ opt.winbar = "%m %t"
 
 -- turn off swap
 opt.swapfile = false
+
+-- set global laststatus
+opt.laststatus = 3
 
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
