@@ -34,5 +34,8 @@ lualine.setup({
 	options = {
 		-- theme = solarized_dark,
 		theme = "NeoSolarized",
+		icons_enabled = true,
+		-- component_separator = "▎",
+		-- section_separators = "",
 	},
 })
