@@ -1,10 +1,8 @@
-local opt = vim.opt -- for conciseness
+local opt = vim.opt -- for concisenessoptions
 local api = vim.api
 
 -- notify
-vim.notify = require("notify").setup({
-	background_colour = "#fff",
-})
+vim.notify = require("notify")
 
 -- transparent background
 api.nvim_set_hl(0, "Normal", { bg = "none" })
