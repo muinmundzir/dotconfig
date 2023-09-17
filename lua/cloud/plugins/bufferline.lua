@@ -9,9 +9,7 @@ bufferline.setup({
 		style_preset = bufferline.style_preset.default, -- or bufferline.style_preset.minimal,
 		themable = true, -- allows highlight groups to be overriden i.e. sets highlights as default
 		numbers = "none",
-		close_command = function(bufnr)
-			vim.buf_kill("bd", bufnr, false)
-		end, -- can be a string | function, | false see "Mouse actions"
+		close_command = "bdelete! %d",
 		right_mouse_command = "bdelete! %d", -- can be a string | function | false, see "Mouse actions"
 		left_mouse_command = "buffer %d", -- can be a string | function, | false see "Mouse actions"
 		middle_mouse_command = nil, -- can be a string | function, | false see "Mouse actions"
@@ -78,6 +76,6 @@ bufferline.setup({
 			delay = 200,
 			reveal = { "close" },
 		},
-		sort_by = "insert_after_current",
+		sort_by = "id",
 	},
 })
