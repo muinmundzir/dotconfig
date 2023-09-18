@@ -1,6 +1,7 @@
 require("cloud.plugins-setup")
 require("cloud.plugins.neo-solarized")
 require("cloud.core.colorscheme")
+require("cloud.plugins.indent-blankline")
 require("cloud.plugins.notify")
 require("cloud.plugins.noice")
 require("cloud.plugins.dressing")
