@@ -15,6 +15,25 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	"nvim-lua/plenary.nvim",
+	-- projects
+	{
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	},
+	-- dashboard
+	{
+		"goolord/alpha-nvim",
+		config = function()
+			require("alpha").setup(require("alpha.themes.dashboard").config)
+		end,
+	},
+
 	-- file explorer
 	"nvim-tree/nvim-tree.lua",
 
@@ -39,6 +58,9 @@ require("lazy").setup({
 
 	"christoomey/vim-tmux-navigator", -- tmux & split window navigation
 	"szw/vim-maximizer", -- maximizes and restore current windo,
+
+	-- indent code
+	"lukas-reineke/indent-blankline.nvim",
 
 	-- essential plugins
 	"tpope/vim-surround",
@@ -80,6 +102,7 @@ require("lazy").setup({
 		dependencies = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
 		config = function()
 			require("telescope").load_extension("lazygit")
+			require("telescope").load_extension("projects")
 		end,
 	},
 
