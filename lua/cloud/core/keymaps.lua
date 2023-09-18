@@ -1,6 +1,5 @@
 -- set leader key to space
 vim.g.mapleader = " "
-local opts = { noremap = true, silent = true }
 local keymap = vim.keymap -- for conciseness
 
 ---------------------
@@ -8,46 +7,46 @@ local keymap = vim.keymap -- for conciseness
 ---------------------
 
 -- use jk to exit insert mode
-keymap.set("i", "jk", "<ESC>", opts)
+keymap.set("i", "jk", "<ESC>")
 
 -- clear search highlights
-keymap.set("n", "<leader>nh", ":nohl<CR>", opts)
+keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 -- delete single character without copying into register
-keymap.set("n", "x", '"_x', opts)
+keymap.set("n", "x", '"_x')
 
 -- moving block code
-keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
-keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- scroll half page center
-keymap.set("n", "<C-d>", "<C-d>zz", opts)
-keymap.set("n", "<C-u>", "<C-u>zz", opts)
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>", opts) -- increment
-keymap.set("n", "<leader>-", "<C-x>", opts) -- decrement
+keymap.set("n", "<leader>+", "<C-a>") -- increment
+keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v", opts) -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", opts) -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
-keymap.set("n", "<leader>sx", ":close<CR>", opts) -- close current split window
+keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
+keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
+keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
-keymap.set("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
-keymap.set("n", "<leader>tx", ":bd<CR>", opts) -- close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
+keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
+keymap.set("n", "<leader>tx", ":bd<CR>") -- close current tab
+keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
+keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 -- buffers
-keymap.set("n", "<S-l>", ":bnext<CR>", opts) -- open new tab
-keymap.set("n", "<S-h>", ":bprevious<CR>", opts) -- open new tab
+keymap.set("n", "<S-l>", ":bnext<CR>") -- open new tab
+keymap.set("n", "<S-h>", ":bprevious<CR>") -- open new tab
 
 -- resize
-keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap.set("n", "<C-Right>", ":vertical resize -2<CR>", opts)
-keymap.set("n", "<C-Left>", ":vertical resize +2<CR>", opts)
+keymap.set("n", "<C-Up>", ":resize -2<CR>")
+keymap.set("n", "<C-Down>", ":resize +2<CR>")
+keymap.set("n", "<C-Right>", ":vertical resize -2<CR>")
+keymap.set("n", "<C-Left>", ":vertical resize +2<CR>")
 
 ----------------------
 -- Plugin Keybinds
@@ -56,7 +55,7 @@ keymap.set("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keymap.set("n", "<leader>gg", ":LazyGit<CR>")
 
 -- toggleterm
--- keymap.set("n", "<C-`>", ":toggleterm<CR>")
+keymap.set("n", "<C-|>", ":ToggleTerm<CR>")
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
