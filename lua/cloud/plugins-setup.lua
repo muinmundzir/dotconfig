@@ -44,6 +44,15 @@ require("lazy").setup({
 	"tpope/vim-surround",
 	"vim-scripts/ReplaceWithRegister",
 
+	-- db
+	"tpope/vim-dadbod",
+
+	-- db ui
+	"kristijanhusak/vim-dadbod-ui",
+
+	-- db completion
+	"kristijanhusak/vim-dadbod-completion",
+
 	-- commenting with gc
 	"numToStr/Comment.nvim",
 
